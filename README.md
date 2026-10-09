@@ -24,6 +24,7 @@ Forgewise is an open, multilingual engineering encyclopedia for clear explanatio
 | `content/templates/article-template.md` | Required article structure. |
 | `content/formulas/` | Formula schema and placeholder data. |
 | `content/en/`, `content/de/` | Language-specific editorial docs. |
+| `content/<lang>/<category id>/` | Articles, e.g. `content/de/machine-elements/passfeder.md`. |
 | `ROADMAP.md` | Next useful development slices and non-goals. |
 | `architecture.md` | Static-site architecture and boundaries. |
 | `docs/formula-blocks.md` | Formula block rules. |

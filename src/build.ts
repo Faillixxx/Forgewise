@@ -14,6 +14,8 @@ type Lang = "en" | "de";
 type Ui = Record<string, string>;
 type Site = { languages: Lang[]; ui: Record<Lang, Ui> };
 type Category = { id: string; en: string; de: string };
+// Articles live in content/<lang>/<category id>/<slug>.md and are built to <lang dir>/<category id>/<slug>.html.
+type Article = { category: string; slug: string; title: string; source: string };
 
 function readJson<T>(file: string): T {
   return JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
@@ -152,9 +154,8 @@ function prose(value: string): string {
     .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>');
 }
 
-function page(lang: Lang, site: Site, title: string, body: string): string {
+function page(lang: Lang, site: Site, title: string, body: string, base = lang === "en" ? "" : "../"): string {
   const ui = site.ui[lang];
-  const base = lang === "en" ? "" : "../";
   const alternates = site.languages
     .map((code) => `<a href="${code === "en" ? `${base}index.html` : `${base}${code}/index.html`}">${site.ui[code].langName}</a>`)
     .join(" ");
@@ -180,10 +181,34 @@ function link(_lang: Lang, file: string): string {
   return file;
 }
 
-function index(lang: Lang, site: Site, categories: Category[]): string {
+function articles(lang: Lang, categories: Category[]): Article[] {
+  return categories.flatMap((category) => {
+    const dir = path.join(content, lang, category.id);
+    if (!fs.existsSync(dir)) return [];
+    return fs
+      .readdirSync(dir)
+      .filter((name: string) => name.endsWith(".md"))
+      .sort()
+      .map((name: string) => {
+        const source = fs.readFileSync(path.join(dir, name), "utf8");
+        const title = source.match(/^# (.+?)(?:\s+\{#[a-z0-9-]+\})?$/m)?.[1];
+        if (!title) throw new Error(`content/${lang}/${category.id}/${name} needs a "# " title`);
+        return { category: category.id, slug: name.slice(0, -3), title, source };
+      });
+  });
+}
+
+function index(lang: Lang, site: Site, categories: Category[], list: Article[]): string {
   const ui = site.ui[lang];
   const items = categories
-    .map((category) => `<li><strong>${escapeHtml(category[lang])}</strong><span>${escapeHtml(ui.noArticles)}</span></li>`)
+    .map((category) => {
+      const links = list
+        .filter((article) => article.category === category.id)
+        .map((article) => `<li><a href="${category.id}/${article.slug}.html">${escapeHtml(article.title)}</a></li>`)
+        .join("");
+      const entries = links ? `<ul class="articles">${links}</ul>` : `<span>${escapeHtml(ui.noArticles)}</span>`;
+      return `<li><strong>${escapeHtml(category[lang])}</strong>${entries}</li>`;
+    })
     .join("");
   const body = `<section class="hero">
   <h1>${escapeHtml(ui.title)}</h1>
@@ -225,8 +250,16 @@ function files(dir: string, suffix: string): string[] {
 
 function validateJson(): void {
   for (const file of files(content, ".json")) JSON.parse(fs.readFileSync(file, "utf8"));
-  const template = fs.readFileSync(path.join(content, "templates", "article-template.md"), "utf8");
-  for (const match of template.matchAll(/```json\n([\s\S]*?)\n```/g)) JSON.parse(match[1]);
+  // Covers the article template and every article's machine-readable formula block.
+  for (const file of files(content, ".md")) {
+    for (const match of fs.readFileSync(file, "utf8").matchAll(/```json\n([\s\S]*?)\n```/g)) {
+      try {
+        JSON.parse(match[1]);
+      } catch (error) {
+        throw new Error(`${file} has an invalid JSON block: ${error}`);
+      }
+    }
+  }
 }
 
 function validateLinks(): void {
@@ -251,7 +284,12 @@ function main(): void {
   copyAssets();
 
   for (const lang of site.languages) {
-    write(lang === "en" ? "index.html" : `${lang}/index.html`, index(lang, site, categories));
+    const dir = lang === "en" ? "" : `${lang}/`;
+    const list = articles(lang, categories);
+    write(`${dir}index.html`, index(lang, site, categories, list));
+    for (const article of list) {
+      write(`${dir}${article.category}/${article.slug}.html`, page(lang, site, article.title, markdown(article.source), `../${lang === "en" ? "" : "../"}`));
+    }
   }
 
   const template = markdown(fs.readFileSync(path.join(content, "templates", "article-template.md"), "utf8"));

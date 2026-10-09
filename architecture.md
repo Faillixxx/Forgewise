@@ -21,6 +21,7 @@ dist/*.html + dist/styles.css
 - `content/templates/article-template.md` is the required article shape.
 - `content/formulas/` contains machine-readable formula data and schema placeholders.
 - `content/en/` and `content/de/` contain language-specific editorial docs.
+- Articles live in `content/<lang>/<category id>/<slug>.md` and are built to `<lang>/<category id>/<slug>.html`; the language index lists them under their category. The first `# ` heading is the article title.
 - `docs/` contains project guidance that may also be rendered into static pages.
 - `public/` contains static assets copied as-is.
 - `src/build.ts` turns the content into static HTML and runs scaffold checks.
