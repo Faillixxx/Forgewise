@@ -28,7 +28,11 @@ dist/*.html + dist/styles.css
 
 ## Checks
 
-`npm run check` runs the TypeScript build, generates the site, validates JSON, verifies internal generated links, checks required scaffold markers, and ensures the article template keeps native `<details><summary>` markup.
+`npm run check` runs the TypeScript build, generates the site, validates JSON, verifies internal generated links and anchors, checks required scaffold markers, and ensures the article template keeps native `<details><summary>` markup. Invalid LaTeX fails the build.
+
+## Markdown rendering
+
+`src/build.ts` contains a small Markdown renderer for the syntax the editorial guidelines use: headings with generated or fixed `{#id}` anchors, bullet and numbered lists, pipe tables, bold, links, inline code, code blocks, and native `<details><summary>`. LaTeX math (`$...$`, `$$...$$`) is rendered at build time with KaTeX into MathML, so pages need no math stylesheet, fonts, or client-side script.
 
 ## Deliberate constraints
 

@@ -4,6 +4,7 @@
     "check": "npm run build && node --check build/build.js && node build/build.js --check"
   },
   "devDependencies": {
+    "katex": "0.18.9",
     "typescript": "^5.6.0"
   }
 }
