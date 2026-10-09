@@ -145,6 +145,30 @@ function copyAssets(): void {
   fs.copyFileSync(path.join(root, "public", "styles.css"), path.join(dist, "styles.css"));
 }
 
+function files(dir: string, suffix: string): string[] {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry: any) => {
+    const file = path.join(dir, entry.name);
+    return entry.isDirectory() ? files(file, suffix) : file.endsWith(suffix) ? [file] : [];
+  });
+}
+
+function validateJson(): void {
+  for (const file of files(content, ".json")) JSON.parse(fs.readFileSync(file, "utf8"));
+  const template = fs.readFileSync(path.join(content, "templates", "article-template.md"), "utf8");
+  for (const match of template.matchAll(/```json\n([\s\S]*?)\n```/g)) JSON.parse(match[1]);
+}
+
+function validateLinks(): void {
+  const hrefPattern = /href="([^"]+)"/g;
+  for (const file of files(dist, ".html")) {
+    const html = fs.readFileSync(file, "utf8");
+    for (const [, href] of html.matchAll(hrefPattern)) {
+      if (!href || href.includes("://") || href.startsWith("#")) continue;
+      if (!fs.existsSync(path.resolve(path.dirname(file), href))) throw new Error(`${file} links missing file ${href}`);
+    }
+  }
+}
+
 function main(): void {
   const site = readJson<Site>("content/site.json");
   const categories = readJson<Category[]>("content/categories.json");
@@ -165,9 +189,15 @@ function main(): void {
   write("de/formula-blocks.html", page("de", site, "Formel-Bausteine", markdown(fs.readFileSync(path.join(root, "docs", "formula-blocks.md"), "utf8"))));
 
   if (process.argv.includes("--check")) {
+    validateJson();
+    validateLinks();
     const indexHtml = fs.readFileSync(path.join(dist, "index.html"), "utf8");
     if (!indexHtml.includes("CC BY-SA 4.0") || !indexHtml.includes("No articles yet")) {
       throw new Error("Generated index misses required scaffold markers");
+    }
+    const templateHtml = fs.readFileSync(path.join(dist, "article-template.html"), "utf8");
+    if (!templateHtml.includes("<details>") || !templateHtml.includes("<summary>")) {
+      throw new Error("Article template misses semantic expandable section");
     }
   }
 }
