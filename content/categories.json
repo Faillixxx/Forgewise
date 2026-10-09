@@ -1,0 +1,9 @@
+[
+  { "id": "machine-elements", "en": "Machine elements", "de": "Maschinenelemente" },
+  { "id": "engineering-mechanics", "en": "Engineering mechanics", "de": "Technische Mechanik" },
+  { "id": "strength-of-materials", "en": "Strength of materials", "de": "Festigkeitslehre" },
+  { "id": "thermodynamics", "en": "Thermodynamics", "de": "Thermodynamik" },
+  { "id": "electrical-engineering", "en": "Electrical engineering", "de": "Elektrotechnik" },
+  { "id": "materials-engineering", "en": "Materials engineering", "de": "Werkstofftechnik" },
+  { "id": "manufacturing-engineering", "en": "Manufacturing engineering", "de": "Fertigungstechnik" }
+]

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "tsc && node build/build.js",
+    "check": "npm run build && node --check build/build.js && node build/build.js --check"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
