@@ -47,6 +47,7 @@ rule here; `CLAUDE.md` only points to this file.
 | Article structure | `content/templates/article-template.md` |
 | Formula data and schema | `content/formulas/` ([rules](docs/formula-blocks.md)) |
 | Language-specific editorial text | `content/<lang>/` (`content/en/`, `content/de/`) |
+| Articles | `content/<lang>/<category id>/<slug>.md` (category ids from `content/categories.json`) |
 | Project guidance rendered as pages | `docs/`, `ROADMAP.md`, `architecture.md` |
 | Static assets copied as-is | `public/` |
 | HTML generation and scaffold checks | `src/build.ts` |
