@@ -1,4 +1,4 @@
-name: Check
+name: Build
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
     branches: [main, feature/**]
 
 jobs:
-  check:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,3 +16,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: forgewise-dist
+          path: dist/

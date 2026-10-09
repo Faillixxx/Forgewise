@@ -19,6 +19,8 @@ Forgewise uses a small static-site scaffold: Markdown/content files in `content/
 - `content/templates/article-template.md` — required article structure.
 - `content/formulas/` — machine-readable formula block schema and placeholder example.
 - `content/en/`, `content/de/` — language-specific editorial documents.
+- `ROADMAP.md` — next development slices and explicit non-goals.
+- `architecture.md` — current static-site architecture and boundaries.
 - `docs/formula-blocks.md` — formula block rules.
 - `src/build.ts` — static HTML build.
 - `public/styles.css` — responsive accessible styling.
