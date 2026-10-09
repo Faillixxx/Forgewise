@@ -52,3 +52,7 @@ pre { overflow-x: auto; padding: 1rem; background: #0a0f17; border-radius: .75re
 code { font-size: .95em; }
 summary { cursor: pointer; font-weight: 700; }
 summary:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; }
+th, td { border: 1px solid #314156; padding: .4rem .6rem; text-align: left; vertical-align: top; }
+.math-display { overflow-x: auto; margin: 1rem 0; }
