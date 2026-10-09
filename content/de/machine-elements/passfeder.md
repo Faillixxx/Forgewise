@@ -4,19 +4,21 @@ Status: Entwurf, fachliche Prüfung offen (siehe Abschnitt 8).
 
 ## 1. Einfach erklärt (für Laien) {#einfach-erklaert}
 
-Eine Passfeder ist ein kleines, rechteckiges Stahlstück, das ein Zahnrad, eine Riemenscheibe oder eine Kupplung auf einer Welle mitnimmt. Sie liegt halb in einer Nut der Welle und halb in einer Nut der aufgesteckten Nabe.
+Eine Passfeder ist ein kleines, längliches Stahlstück, das ein Zahnrad, eine Riemenscheibe oder eine Kupplung auf einer Welle mitdrehen lässt. Sie liegt halb in einer Nut der Welle und halb in einer Nut der Nabe, also des Teils, das auf die Welle gesteckt ist.
 
-Dreht sich die Welle, drückt sie mit der Seitenfläche der Nut gegen die Passfeder, und die Passfeder drückt ihrerseits gegen die Nut der Nabe. So wird das Drehmoment durch Formschluss übertragen, ähnlich wie ein Riegel, der zwei Teile gegeneinander sperrt.
+Dreht sich die Welle, drückt die Seitenwand ihrer Nut gegen die Passfeder, und die Passfeder drückt ihrerseits gegen die Nut der Nabe. So wird das Drehmoment durch Formschluss übertragen: Welle, Passfeder und Nabe greifen ineinander, ähnlich wie ein Riegel, der zwei Teile gegeneinander sperrt.
 
-Die Passfeder hält die Nabe nicht in Längsrichtung fest; dafür sind andere Elemente nötig, zum Beispiel ein Wellenabsatz oder ein Sicherungsring.
+Die Passfeder hält die Nabe nicht in Längsrichtung der Welle fest; dafür sind andere Elemente nötig, zum Beispiel ein Wellenabsatz oder ein Sicherungsring.
 
-Die wichtigste Frage bei der Auslegung lautet: Halten die gedrückten Seitenflächen das aus? Das beschreibt die Flächenpressung.
+Bei der Auslegung lautet die wichtigste Frage: Halten die Seitenflächen, die aufeinander drücken, diese Belastung aus? Das beschreibt die Flächenpressung, also die Kraft je Fläche, mit der die Flächen aufeinander drücken.
 
 ## 2. Die Formeln (für Einsteiger) {#formeln}
 
-Die Formeln sind Größengleichungen und gelten in jedem kohärenten Einheitensystem.
+Die Rechnung läuft in vier Schritten: Aus dem Drehmoment folgt die Umfangskraft an der Passfeder, aus den Abmessungen die tragende Fläche, aus beiden die Flächenpressung, und diese wird mit einem zulässigen Wert verglichen.
 
-Umfangskraft an der Welle:
+Die Formeln sind Größengleichungen und gelten in jedem kohärenten Einheitensystem. Beim Einsetzen müssen alle Längen dieselbe Einheit haben: Mit $T$ in N·mm und $d$, $h_\mathrm{tr}$, $l_\mathrm{tr}$ in mm ergibt Gleichung (4) die Pressung direkt in N/mm².
+
+Umfangskraft an der Welle, also die Kraft, mit der die Welle über die Seitenwand ihrer Nut gegen die Passfeder drückt:
 
 $$F_\mathrm{t} = \dfrac{2\,T}{d} \tag{1}$$
 
@@ -24,7 +26,7 @@ $$F_\mathrm{t} = \dfrac{2\,T}{d} \tag{1}$$
 - $T$: zu übertragendes Drehmoment in N·m
 - $d$: Wellendurchmesser in m
 
-Tragende Länge einer rundstirnigen Passfeder (Form A):
+Tragende Länge einer rundstirnigen Passfeder (Form A). Die runden Enden tragen nicht mit, deshalb zählt nur der gerade Teil:
 
 $$l_\mathrm{tr} = l - b \tag{2}$$
 
@@ -32,7 +34,7 @@ $$l_\mathrm{tr} = l - b \tag{2}$$
 - $l$: Gesamtlänge der Passfeder in mm
 - $b$: Breite der Passfeder in mm
 
-Tragende Höhe auf der Nabenseite (vereinfacht, ohne Fasen und Rundungen):
+Tragende Höhe auf der Nabenseite, also der Teil der Passfeder, der aus der Wellennut in die Nabennut ragt (vereinfacht, ohne Fasen und Rundungen):
 
 $$h_\mathrm{tr} = h - t_1 \tag{3}$$
 
@@ -40,13 +42,13 @@ $$h_\mathrm{tr} = h - t_1 \tag{3}$$
 - $h$: Höhe der Passfeder in mm
 - $t_1$: Wellennuttiefe in mm
 
-Mittlere Flächenpressung an der Nabennut:
+Mittlere Flächenpressung an der Nabennut, also die Kraft geteilt durch die tragende Fläche $h_\mathrm{tr}\,l_\mathrm{tr}$:
 
 $$p = \dfrac{F_\mathrm{t}}{h_\mathrm{tr}\,l_\mathrm{tr}} = \dfrac{2\,T}{d\,h_\mathrm{tr}\,l_\mathrm{tr}} \tag{4}$$
 
 - $p$: mittlere Flächenpressung in N/mm²
 
-Vereinfachte Bedingung gegen Fließen an der Tragfläche:
+Vereinfachte Bedingung gegen Fließen, also gegen bleibende Verformung der Tragfläche:
 
 $$p \le p_\mathrm{zul} = \dfrac{R_\mathrm{eH}}{S_\mathrm{F}} \tag{5}$$
 
@@ -99,7 +101,7 @@ Probe durch Einsetzen: (6) in (4) ergibt $p = 2\,(p\,d\,h_\mathrm{tr}\,l_\mathrm
 ## 4. Gestaltungsregeln {#gestaltungsregeln}
 
 - Breite und Höhe der Passfeder richten sich nach dem Wellendurchmesser und werden aus DIN 6885-1:2021-11 gewählt. Beispiel: Für Wellen über 38 mm bis 44 mm ist der Querschnitt 12 mm × 8 mm vorgesehen [Q3], [Q4].
-- Die Länge wird aus der genormten Längenstufung gewählt; für den Querschnitt 12 × 8 reicht der Bereich von 28 mm bis 140 mm [Q4].
+- Die Länge wird aus der genormten Längenstufung gewählt; für den Querschnitt 12 mm × 8 mm reicht der Bereich von 28 mm bis 140 mm [Q4].
 - Die Nutbreite in der Welle erhält für festen Sitz die Toleranzklasse P9 und für leichten Sitz N9; in der Nabe P9 bzw. JS9. Für eine längsverschiebbare Nabe (Gleitfeder) gelten H9 in der Welle und D10 in der Nabe [Q4].
 - Bei Form A trägt nur der gerade Teil der Passfeder; die Länge wird deshalb mit Gleichung (2) bewertet.
 - Wenn die Nabe aus dem schwächeren Werkstoff besteht, ist die Nabenseite maßgebend; bei gleichen Werkstoffen ist es wegen $h - t_1 < t_1$ ebenfalls meist die Nabe.
@@ -122,6 +124,7 @@ Gegeben (Annahmen des Beispiels, außer den mit Quelle gekennzeichneten Werten):
 Gesucht: Flächenpressung $p$ an der Nabennut, Nachweis nach Gleichung (5) und die mindestens nötige Passfederlänge.
 
 Lösung:
+
 Umfangskraft nach (1):
 
 $$
@@ -174,7 +177,7 @@ Die Zahlen wurden per Skript nachgerechnet.
 ## 7. Quellen und weiterführende Literatur {#quellen}
 
 - [Q1] DIN 6885-1:2021-11 Mitnehmerverbindungen ohne Anzug, Passfedern, Nuten – Hohe Form – Teil 1: Maße, Toleranzen, Masse. Status laut DIN: gültig. Normtext nicht eingesehen; Werte stammen aus [Q3] und [Q4].
-- [Q2] DIN 6892:2025-10 Mitnehmerverbindungen ohne Anzug – Passfedern – Berechnung und Gestaltung. Ersetzt DIN 6892:2012-08. Normtext nicht eingesehen; verweist auf den ausführlichen Nachweis.
+- [Q2] DIN 6892:2025-10 Mitnehmerverbindungen ohne Anzug – Passfedern – Berechnung und Gestaltung. Ersetzt DIN 6892:2012-08. Normtext nicht eingesehen; hier zitiert für den ausführlichen Nachweis.
 - [Q3] GANTER: Datenblatt DIN 6885 Passfedern, Stand 2/2024: Breite, Höhe, Länge und Wellendurchmesserbereich. [PDF](https://reiman.pt/pub/media/technical_data/GANTER/datasheets/DIN%206885.pdf)
 - [Q4] TU Dortmund, Fakultät Maschinenbau: Beispielklausur WS 2009/10, Anhang „Abmessungen der Passfedern nach DIN 6885 T1 (Auszug)“, mit Längenstufung und Toleranzen. Auszug einer älteren Normausgabe. [PDF](https://lkp.mb.tu-dortmund.de/storages/me-mb/r/dokumente/Klausuren/Beispielklausuren/Klausur_bspl_TZ_WS0910.pdf)
 - [Q5] DIN EN 10025-2:2019-10 Warmgewalzte Erzeugnisse aus Baustählen – Teil 2: Technische Lieferbedingungen für unlegierte Baustähle.
