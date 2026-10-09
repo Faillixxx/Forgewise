@@ -28,4 +28,4 @@ This roadmap is intentionally small. It tracks the next useful slices without pr
 - No generated technical claims.
 - No automatic translation.
 - No interactive calculator before reviewed formula data exists.
-- No Roloff/Matek-derived content unless material is provided and the use is documented.
+- No content copied or derived from reference books.

@@ -1,3 +1,6 @@
 node_modules/
 build/
 dist/
+
+# Copyrighted source material (books, standards, datasheets); local only, never commit.
+/sources/

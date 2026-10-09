@@ -83,7 +83,7 @@ Forgewise is an open, multilingual engineering encyclopedia. These guidelines de
 - Forgewise is guided by established engineering references but never copies their text, tables, images, detailed structure, or worked examples.
 - A textbook used as a source is cited for individual statements or values; everything else is written in your own words.
 - Do not copy third-party text, images, tables, or diagrams unless the license is checked and attribution is correct.
-- Roloff/Matek was not used for this scaffold. Later technical review with provided material can be documented when it actually happens.
+- Reference works used only for technical cross-checking are never used as a template, and no values are taken from them. Every published value has its own citable source.
 
 ## Language and style
 

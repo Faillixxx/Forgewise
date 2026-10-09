@@ -83,7 +83,7 @@ Forgewise ist eine offene, mehrsprachige Enzyklopädie für die Ingenieurwissens
 - Forgewise orientiert sich an bewährten Nachschlagewerken, übernimmt aber weder deren Texte noch Tabellen, Bilder, detaillierte Gliederung oder Berechnungsbeispiele.
 - Wer ein Fachbuch als Quelle nutzt, zitiert es für einzelne Aussagen oder Werte und formuliert alles Übrige selbst.
 - Fremde Texte, Bilder, Tabellen und Diagramme werden nur nach Lizenzprüfung und mit korrekter Zuschreibung übernommen.
-- Roloff/Matek wurde für dieses Grundgerüst nicht verwendet. Eine spätere fachliche Gegenprüfung mit bereitgestelltem Material kann dokumentiert werden, wenn sie tatsächlich erfolgt.
+- Referenzwerke, die nur zur fachlichen Gegenprüfung dienen, werden nicht als Vorlage verwendet; aus ihnen werden keine Werte übernommen. Jeder veröffentlichte Wert hat eine eigene, nennbare Quelle.
 
 ## Sprache und Stil
 
