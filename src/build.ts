@@ -221,7 +221,7 @@ function index(lang: Lang, site: Site, categories: Category[], list: Article[]):
   <h2>${escapeHtml(ui.fields)}</h2>
   <ul class="categories">${items}</ul>
 </section>
-<section class="links" aria-label="Project documents">
+<section class="links" aria-label="${escapeHtml(ui.projectDocuments)}">
   <a href="${link(lang, "article-template.html")}">${escapeHtml(ui.template)}</a>
   <a href="${link(lang, lang === "en" ? "editorial-guidelines.html" : "redaktionsrichtlinie.html")}">${escapeHtml(ui.guidelines)}</a>
   <a href="${link(lang, "formula-blocks.html")}">${escapeHtml(ui.formulas)}</a>
