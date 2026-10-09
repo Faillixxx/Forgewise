@@ -1,0 +1,35 @@
+{
+  "languages": ["en", "de"],
+  "ui": {
+    "en": {
+      "langName": "English",
+      "title": "Forgewise",
+      "claim": "Engineering, forged into understanding.",
+      "description": "Forgewise is an open, multilingual engineering encyclopedia for clear explanations, practical calculations, and useful design knowledge.",
+      "openProject": "Forgewise is intended to grow article by article across multiple languages.",
+      "placeholder": "Placeholder: technical articles will be added gradually after review.",
+      "fields": "Fields",
+      "noArticles": "No articles yet",
+      "license": "Editorial content is intended for CC BY-SA 4.0.",
+      "template": "Article template",
+      "guidelines": "Editorial guidelines",
+      "formulas": "Formula block schema",
+      "language": "Language"
+    },
+    "de": {
+      "langName": "Deutsch",
+      "title": "Forgewise",
+      "claim": "Engineering, forged into understanding.",
+      "description": "Forgewise ist eine offene, mehrsprachige Ingenieur-Enzyklopädie für klare Erklärungen, praktische Berechnungen und nützliches Konstruktionswissen.",
+      "openProject": "Forgewise soll Artikel für Artikel in mehreren Sprachen wachsen.",
+      "placeholder": "Platzhalter: Fachartikel werden nach fachlicher Prüfung schrittweise ergänzt.",
+      "fields": "Fachgebiete",
+      "noArticles": "Noch keine Artikel",
+      "license": "Redaktionelle Inhalte sind für CC BY-SA 4.0 vorgesehen.",
+      "template": "Artikelvorlage",
+      "guidelines": "Redaktionsrichtlinie",
+      "formulas": "Formel-Baustein-Schema",
+      "language": "Sprache"
+    }
+  }
+}

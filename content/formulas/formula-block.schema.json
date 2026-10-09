@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forgewise.example/formula-block.schema.json",
+  "title": "Forgewise formula block",
+  "type": "object",
+  "required": ["id", "topic", "status", "baseFormula", "variables", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string" },
+    "topic": { "type": "string" },
+    "status": { "enum": ["placeholder", "draft", "reviewed"] },
+    "baseFormula": { "type": "string" },
+    "variables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["symbol", "name", "siUnit", "displayUnits", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "symbol": { "type": "string" },
+          "name": { "type": "string" },
+          "siUnit": { "type": "string" },
+          "displayUnits": { "type": "array", "items": { "type": "string" } },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "rearrangements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["solveFor", "formula", "check"],
+        "additionalProperties": false,
+        "properties": {
+          "solveFor": { "type": "string" },
+          "formula": { "type": "string" },
+          "check": { "type": "string" }
+        }
+      }
+    },
+    "assumptions": { "type": "array", "items": { "type": "string" } },
+    "limits": { "type": "array", "items": { "type": "string" } },
+    "sources": { "type": "array", "items": { "type": "string" } }
+  }
+}

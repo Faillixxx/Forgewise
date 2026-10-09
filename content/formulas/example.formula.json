@@ -1,0 +1,25 @@
+{
+  "id": "placeholder-formula-id",
+  "topic": "[Thema ergänzen]",
+  "status": "placeholder",
+  "baseFormula": "[Grundformel mit Quelle ergänzen]",
+  "variables": [
+    {
+      "symbol": "[Symbol]",
+      "name": "[Name ergänzen]",
+      "siUnit": "[SI-Einheit ergänzen]",
+      "displayUnits": ["[Anzeigeeinheit ergänzen]"],
+      "source": "[Quelle ergänzen]"
+    }
+  ],
+  "rearrangements": [
+    {
+      "solveFor": "[Symbol]",
+      "formula": "[Umstellung ergänzen]",
+      "check": "[Durch Einsetzen in die Grundformel prüfen]"
+    }
+  ],
+  "assumptions": ["[Annahme ergänzen]"],
+  "limits": ["[Grenze ergänzen]"],
+  "sources": ["[Quelle ergänzen]"]
+}
