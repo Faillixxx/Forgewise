@@ -66,8 +66,8 @@ non-negotiables for agents:
 
 - Do not add full technical articles, formulas, standards, values, or sources
   unless they are verified and cited. Never invent values, sources, or checks.
-- Never claim Roloff/Matek or any other material was checked unless it was
-  actually provided and used, and document that use when it happens.
+- Never claim any material was checked unless it was actually provided and
+  used.
 - Write original Forgewise text. Do not reproduce standard text, large standard
   tables, or third-party text, images, tables, or diagrams without a license
   check and correct attribution.
@@ -133,6 +133,15 @@ non-negotiables for agents:
 - Publishing or deploying the site outside this repository, paid services, and
   license decisions need explicit approval.
 - Keep credentials and private data out of commits, logs, and shared text.
+- Source material (books, standards, datasheets, papers) lives only in the
+  git-ignored `sources/` folder ([layout](README.md#local-source-material)).
+  Never commit, quote at length, or copy from it. Read it only when the task
+  provides or names it.
+- Reference books used for local cross-checking are private: never name them
+  in tracked files, commit messages, branch names, PRs, issues, or published
+  content, and never take values from them. Every published value cites its
+  own nameable source (standard, datasheet, paper). Which books are used is
+  recorded only in `sources/notes/`.
 - Stage only intended files. Use concise, factual commit messages
   (Conventional Commits style preferred) with verified author identity.
 - No agent-attribution trailers (such as `Co-Authored-By` lines for AI

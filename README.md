@@ -28,6 +28,7 @@ Forgewise is an open, multilingual engineering encyclopedia for clear explanatio
 | `architecture.md` | Static-site architecture and boundaries. |
 | `docs/formula-blocks.md` | Formula block rules. |
 | `src/build.ts` | Static HTML generator and scaffold checks. |
+| `sources/` | Local, git-ignored source material; see below. |
 | `public/styles.css` | Responsive accessible styling. |
 
 ## Build locally
@@ -59,10 +60,25 @@ Open `dist/index.html` after the build.
 4. Keep the machine-readable JSON block valid.
 5. Use native `<details><summary>...</summary></details>` for the engineering deep-dive section.
 
+## Local source material
+
+Books, standards, datasheets, and papers used for checking articles are copyrighted and stay on your machine in `sources/`, which Git ignores:
+
+```text
+sources/
+  books/         one folder per book and edition
+  standards/     standard PDFs, named by designation and edition
+  datasheets/    manufacturer datasheets
+  papers/        journal and conference papers
+  notes/         review notes that quote or excerpt source material
+```
+
+Never commit anything from `sources/` (no `git add -f`). Citations go into the article and formula blocks instead.
+
 ## Licensing
 
 Editorial content is intended for CC BY-SA 4.0.
 
 Content and software code can have different licenses. No software code license has been chosen in this repository yet.
 
-Foreign text, images, tables, and diagrams may only be reused after license checks and correct attribution. Roloff/Matek was not used for this scaffold; later technical review with provided material is possible and must be documented when it actually happens.
+Foreign text, images, tables, and diagrams may only be reused after license checks and correct attribution.

@@ -48,15 +48,11 @@ Richte die Anweisungen für Coding-Agenten so ein, dass künftige Arbeiten im Re
 - Übernimm keine fremden Projektinhalte, Formulierungen, Codebeispiele, Marken, Bilder oder projektspezifischen Entscheidungen. Schreibe die Anweisungen und Vorlagen eigenständig für Forgewise.
 - Halte Agenten-Anweisungen so knapp, dass sie im Arbeitsalltag verwendbar bleiben. Verweise auf ausführlichere Richtlinien, statt deren Inhalt mehrfach zu kopieren.
 
-## Roloff/Matek und weitere Quellen
+## Referenzliteratur
 
-Roloff/Matek Maschinenelemente wird möglicherweise später zur fachlichen Gegenkontrolle bereitgestellt.
-
-- Verwende das Buch in dieser Aufgabe nicht als Quelle.
-- Behaupte nicht, Roloff/Matek geprüft zu haben.
+- Fachliteratur zur Gegenprüfung wird nur lokal verwendet und nicht im Repository genannt.
 - Baue keine Buchinhalte, Tabellen, Abbildungen oder Formulierungen ein.
-- Dokumentiere, dass eine spätere fachliche Gegenprüfung mit bereitgestelltem Material möglich ist.
-- Der initiale Scaffold muss ohne dieses Buch vollständig angelegt werden können.
+- Der initiale Scaffold muss ohne Referenzliteratur vollständig angelegt werden können.
 
 ## Umfang des Grundgerüsts
 
@@ -154,7 +150,6 @@ Dokumentiere in README oder einer passenden Projektdatei:
 - Inhalte und Softwarecode können unterschiedliche Lizenzen haben.
 - Die Lizenz für den Softwarecode bleibt offen, sofern sie im Repository noch nicht festgelegt ist.
 - Fremde Texte, Bilder, Tabellen und Diagramme dürfen nur nach Prüfung ihrer Lizenz und korrekter Zuschreibung übernommen werden.
-- Roloff/Matek ist in dieser Grundgerüst-Phase nicht verwendet worden.
 
 Füge keine fremden Bilder oder geschützten Lehrbuchinhalte ein.
 
@@ -163,7 +158,7 @@ Füge keine fremden Bilder oder geschützten Lehrbuchinhalte ein.
 - Keine vollständigen technischen Fachartikel
 - Keine konkreten Berechnungen oder Werkstoffauslegungen
 - Keine erfundenen Formeln, Kennwerte, Normverweise oder Literaturquellen
-- Keine Roloff/Matek-Inhalte
+- Keine Inhalte aus Referenzliteratur
 - Kein Formelrechner
 - Keine automatische Übersetzung
 - Keine Veröffentlichung oder Bereitstellung außerhalb des angegebenen GitHub-Repositories
