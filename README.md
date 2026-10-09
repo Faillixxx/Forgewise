@@ -2,30 +2,35 @@
 
 **Engineering, forged into understanding.**
 
-Forgewise is an open, multilingual engineering encyclopedia that turns complex technical ideas into clear explanations, practical calculations, and useful design knowledge. Its articles serve curious beginners, students, and practicing engineers.
+Forgewise is an open, multilingual engineering encyclopedia for clear explanations, practical calculations, and reviewed design knowledge. It is meant for curious beginners, students, and practicing engineers.
 
-## Status
+> Status: scaffold only. No reviewed technical articles, formulas, standards, material values, or literature claims are published yet.
 
-This repository currently contains the technical and editorial scaffold only. Full technical articles, formulas, calculations, standards, values, and literature references are added later after verification.
+## What is here
 
-## Stack
+- A small static-site build with Markdown/content files and TypeScript.
+- English and German scaffold pages.
+- Placeholder engineering fields, clearly marked as empty.
+- A required article template for future topics.
+- A machine-readable formula-block schema and placeholder example.
+- Editorial guidance for sources, licensing, standards, material values, and uncertainty.
 
-Forgewise uses a small static-site scaffold: Markdown/content files in `content/`, TypeScript in `src/build.ts`, and generated static files in `dist/`. This keeps publishing simple, supports Markdown-based articles, and avoids a framework before the project needs one.
+## Project map
 
-## Structure
+| File or folder | Purpose |
+| --- | --- |
+| `content/site.json` | UI text and available languages. |
+| `content/categories.json` | Field/category placeholders. |
+| `content/templates/article-template.md` | Required article structure. |
+| `content/formulas/` | Formula schema and placeholder data. |
+| `content/en/`, `content/de/` | Language-specific editorial docs. |
+| `ROADMAP.md` | Next useful development slices and non-goals. |
+| `architecture.md` | Static-site architecture and boundaries. |
+| `docs/formula-blocks.md` | Formula block rules. |
+| `src/build.ts` | Static HTML generator and scaffold checks. |
+| `public/styles.css` | Responsive accessible styling. |
 
-- `content/site.json` — translatable UI text and available languages.
-- `content/categories.json` — field placeholders shown on the start page.
-- `content/templates/article-template.md` — required article structure.
-- `content/formulas/` — machine-readable formula block schema and placeholder example.
-- `content/en/`, `content/de/` — language-specific editorial documents.
-- `ROADMAP.md` — next development slices and explicit non-goals.
-- `architecture.md` — current static-site architecture and boundaries.
-- `docs/formula-blocks.md` — formula block rules.
-- `src/build.ts` — static HTML build.
-- `public/styles.css` — responsive accessible styling.
-
-## Local start and checks
+## Build locally
 
 ```sh
 npm install
@@ -34,19 +39,30 @@ npm run check
 
 Open `dist/index.html` after the build.
 
-## Adding a language
+`npm run check` builds the site, validates JSON, checks generated links, verifies required scaffold markers, and checks that the article template keeps native `<details><summary>` markup.
 
-1. Add the language code and UI strings to `content/site.json`.
-2. Add translated editorial documents only when they exist.
-3. Keep formula definitions in `content/formulas/`; do not translate machine-readable formula data.
-4. Expose only languages that have usable content.
+## Content rules
+
+- Write original Forgewise text.
+- Cite formulas, assumptions, data, standards, and literature.
+- Do not add invented values, fake sources, or claimed checks.
+- Do not reproduce standard text or large standard tables.
+- Mark material properties as guide values unless a cited datasheet or verified standard says otherwise.
+- Keep UI text separate from formula data.
+- Add languages only when human-maintained content exists.
 
 ## Article workflow
 
-Copy `content/templates/article-template.md` for a topic and replace placeholders only with verified, cited content. The engineering section uses native `<details><summary>...</summary></details>`, which is semantic and keyboard-accessible without JavaScript.
+1. Copy `content/templates/article-template.md` for a topic.
+2. Replace placeholders only with verified, cited content.
+3. Keep the section order from the template.
+4. Keep the machine-readable JSON block valid.
+5. Use native `<details><summary>...</summary></details>` for the engineering deep-dive section.
 
-## Sources and licensing
+## Licensing
 
-Editorial content is intended for CC BY-SA 4.0. Content and software code can have different licenses; no software code license has been chosen in this repository yet.
+Editorial content is intended for CC BY-SA 4.0.
 
-Foreign text, images, tables, and diagrams may only be reused after license checks and correct attribution. Roloff/Matek was not used for this scaffold. Later technical review with provided material is possible and must be documented when it actually happens.
+Content and software code can have different licenses. No software code license has been chosen in this repository yet.
+
+Foreign text, images, tables, and diagrams may only be reused after license checks and correct attribution. Roloff/Matek was not used for this scaffold; later technical review with provided material is possible and must be documented when it actually happens.
